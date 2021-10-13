@@ -76,7 +76,7 @@
                         <button type="submit" >remove</button>
                         </form> 
                         
-                        <a href="./modifyuser.jsp/?idx=<%=idx%>">
+                        <a href="./modifyuser.jsp?idx=<%=idx%>">
                         <button>modify</button>
                         </form> 
                     </td>
