@@ -4,7 +4,14 @@
     Author     : admin
     THIS EXAMPLE USES USER OBJECT
 --%>
-
+        
+        // To be deleted once ReST implemented - see service/AdminService.java
+        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+    }
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
