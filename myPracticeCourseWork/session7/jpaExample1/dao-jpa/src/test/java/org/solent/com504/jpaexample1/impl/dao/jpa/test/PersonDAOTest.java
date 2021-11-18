@@ -39,12 +39,20 @@ public class PersonDAOTest {
         // delete all in database
         personDao.deleteAll();
         // add 5 patients
-        for (int i = 1; i < 6; i++) {
+        for (int i = 1; i < 4; i++) {
             Person p = new Person();
             p.setAddress("address_" + i);
             p.setFirstName("firstName_" + i);
             p.setSecondName("secondName_" + i);
             p.setRole(Role.PATIENT);
+            personDao.save(p);
+        }
+        for (int i = 1; i < 3; i++) {
+            Person p = new Person();
+            p.setAddress("address_" + i);
+            p.setFirstName("firstName_" + i);
+            p.setSecondName("secondName_" + i);
+            p.setRole(Role.DENTIST);
             personDao.save(p);
         }
     }
@@ -186,8 +194,17 @@ public class PersonDAOTest {
     @Test
     public void findByRoleTest() {
         LOG.debug("start of findByIdTest()");
-        //TODO implement test
-        LOG.debug("NOT IMPLEMENTED");
+        
+        init();
+        List<Person> personList = personDao.findAll();
+        assertNotNull(personList);
+        
+        List<Person> personList2 = personDao.findByRole(Role.PATIENT);
+        assertEquals(3, personList2.size());
+        
+        List<Person> personList3 = personDao.findByRole(Role.DENTIST);
+        assertEquals(2, personList3.size());
+        
         LOG.debug("end of findByIdTest()");
     }
 
